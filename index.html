@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Big Tech's Funding of Journalism</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.3/b-2.2.1/b-colvis-2.2.1/b-html5-2.2.1/r-2.2.9/rg-1.1.4/sb-1.3.0/sp-1.4.0/datatables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.3/b-2.2.1/b-colvis-2.2.1/b-html5-2.2.1/r-2.2.9/rg-1.1.4/sb-1.3.0/sp-1.4.0/datatables.min.js"></script>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="#first" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FJP - Beneficiaries</a>
+    <a href="#second" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FJP - Intermediaries</a>
+    <a href="#third" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FJP - Projects</a>
+    <a href="#fourth" class="w3-bar-item w3-button w3-padding-large">FJP - Fact-Checkers</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#first" class="w3-bar-item w3-button w3-padding-large">FJP - Beneficiaries</a>
+    <a href="#second" class="w3-bar-item w3-button w3-padding-large">FJP - Intermediaries</a>
+    <a href="#third" class="w3-bar-item w3-button w3-padding-large">FJP - Projects</a>
+    <a href="#fourth" class="w3-bar-item w3-button w3-padding-large">FJP - Fact-Checkers</a>
+  </div>
+</div>
+  
+<!-- Header -->
+<header class="w3-container w3-light-grey w3-center" style="max-width: 100%; max-height: 100%; padding: 5%;">
+  <h1 class="w3-margin" style= "font-size: 56px;">Big Tech's Funding of Journalism</h1>
+</header>
+
+<head>
+    <script>
+    $(document).ready(function() {
+        $('#funding').DataTable({
+    "iDisplayLength": 10
+  });
+
+
+    $('#funding tbody').on('click', 'td.details-control', function () {
+        var table = $('#funding').DataTable();
+        var tr = $(this).closest('tr');
+        var row = table.row( tr )
+        var data = table.row( this ).data();
+
+        if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        }
+        else {
+            // Open this row
+            row.child(data[6]).show();
+            tr.addClass('shown');
+        }
+        } );
+    } );
+    </script>
+    <style>
+
+  #funding_wrapper {
+    width: 95%;
+    margin: 10px;
+
+  }
+
+</style>
+</head>
+
+<body>
+
+<table id="funding" class="display">
+<thead><tr><th title="Field #1">Organization</th>
+<th title="Field #2">Country</th>
+<th title="Field #3">Languages</th>
+</tr></thead>
+<tbody><tr>
+    <td>AFP</td>
+    <td>Algeria</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td>Argentina</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Australia</td>
+    <td>English</td>
+    </tr>
+    <tr>
+    <td>Chequeado</td>
+    <td>Austria</td>
+    <td>German, Dutch, French</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Azerbaijan</td>
+    <td>Turkish, Azeri</td>
+    </tr>
+    <tr>
+    <td>Australian Associated Press</td>
+    <td>Bahrain</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Bangladesh</td>
+    <td>Bengali, English</td>
+    </tr>
+    <tr>
+    <td>dpa-Faktencheck</td>
+    <td>Belgium</td>
+    <td>Dutch, French, German</td>
+    </tr>
+    <tr>
+    <td>Teylt</td>
+    <td>Benin</td>
+    <td>French, Yoruba</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Bolivia</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td>Bosnia and Herzegovina</td>
+    <td>Bosnian, Croatian, Serbian, Montenegrfan</td>
+    </tr>
+    <tr>
+    <td>BOOM Bangladesh</td>
+    <td>Brazil</td>
+    <td>Portuguese</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Bulgaria</td>
+    <td>Bulgarian</td>
+    </tr>
+    <tr>
+    <td>Fact Watch</td>
+    <td>Burkina Faso</td>
+    <td>French</td>
+    </tr>
+    <tr>
+    <td>Knack</td>
+    <td>Burundi</td>
+    <td>English, French</td>
+    </tr>
+    <tr>
+    <td>dpa-Faktencheck</td>
+    <td>Cameroon</td>
+    <td>English, French</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Canada</td>
+    <td>English, French</td>
+    </tr>
+    <tr>
+    <td>Africa Check</td>
+    <td>Central African Republic</td>
+    <td>French</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Chile</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Colombia</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>Raskrinkavanje</td>
+    <td>Costa Rica</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Cote d’Ivoire</td>
+    <td>English, Swahili, Amharic, French, Oromo</td>
+    </tr>
+    <tr>
+    <td>Agência Lupa</td>
+    <td>Croatia</td>
+    <td>Croatian</td>
+    </tr>
+    <tr>
+    <td>Aos Fatos</td>
+    <td>Cyprus</td>
+    <td>Greek</td>
+    </tr>
+    <tr>
+    <td>Estadão Verifica</td>
+    <td>Czech Republic</td>
+    <td>Czech</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Denmark</td>
+    <td>Danish</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Democratic Republic of Congo</td>
+    <td>French</td>
+    </tr>
+    <tr>
+    <td>Pesa Check</td>
+    <td>Ecuador</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>Pesa Check</td>
+    <td>Egypt</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>El Salvador</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>Pesa Check</td>
+    <td>Estonia</td>
+    <td>Lithuanian, Russian, Engllsh</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Ethiopia</td>
+    <td>Amharlc, Oromo, Tlgrlnya</td>
+    </tr>
+    <tr>
+    <td>Radio-Canada ... Les Décrypteurs</td>
+    <td>Finland</td>
+    <td>Finnish</td>
+    </tr>
+    <tr>
+    <td>Congo Check</td>
+    <td>France</td>
+    <td>French, English</td>
+    </tr>
+    <tr>
+    <td>Pesa Check</td>
+    <td>Germany</td>
+    <td>German, Dutch, French</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Georgia</td>
+    <td>Georgian, Armenian, Azerbaijani, Russian, German</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Ghana</td>
+    <td>English</td>
+    </tr>
+    <tr>
+    <td>Colomblacheck</td>
+    <td>Guatemala</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>La SIiia Vacia</td>
+    <td>Greece</td>
+    <td>Greek</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Guinea-Conakry</td>
+    <td>French</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Honduras</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>Les Observateurs de France 24</td>
+    <td>Hong Kong</td>
+    <td>English, Chinese</td>
+    </tr>
+    <tr>
+    <td>PesaCheck</td>
+    <td>Hungary</td>
+    <td>Hungarian</td>
+    </tr>
+    <tr>
+    <td>Faktograf.hr</td>
+    <td>India</td>
+    <td>Engllsh, Hindi, Bengali, Telegu, Kannada, Malayalam, Urdu, Punjabi, Assamese, Marathi, Gujarati, Tamil</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>lndonesla</td>
+    <td>lndonesian</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Iraq</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Ireland</td>
+    <td>English</td>
+    </tr>
+    <tr>
+    <td>Oemagog.cz</td>
+    <td>Israel</td>
+    <td>English, Hebrew, Arabic</td>
+    </tr>
+    <tr>
+    <td>TjekDet</td>
+    <td>Italy</td>
+    <td>Italian</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Jordan</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>Les Observateurs de France 24</td>
+    <td>Kenya</td>
+    <td>English, Swahili</td>
+    </tr>
+    <tr>
+    <td>Congo Check</td>
+    <td>Kuwait</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Latvia</td>
+    <td>Lithuanian. Russian, Engtlsh, Latvian</td>
+    </tr>
+    <tr>
+    <td>Ecuador Chequea</td>
+    <td>Lebanon</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Libya</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td>Lithuania</td>
+    <td>Lithuanian, Russian, English</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Luxembourg</td>
+    <td>German, Dutch, French</td>
+    </tr>
+    <tr>
+    <td>Delfi</td>
+    <td>Malaysia</td>
+    <td>Bahua Molayu, English</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Mali</td>
+    <td>French</td>
+    </tr>
+    <tr>
+    <td>Pesa Check</td>
+    <td>Pesa Check</td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Mexico</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>20 minutes</td>
+    <td>Montenegro</td>
+    <td>Bosnian, Croatian, Serbian. Montenegrian</td>
+    </tr>
+    <tr>
+    <td>Agence France Presse</td>
+    <td>Morocco</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>Les Décodeurs du Monde</td>
+    <td>The Netherlands</td>
+    <td>German, Dutch, French</td>
+    </tr>
+    <tr>
+    <td>Les Observateurs de France 24</td>
+    <td>New Zealand</td>
+    <td>English</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Nicaragua</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>Correctiv</td>
+    <td>Niger</td>
+    <td>French, Hausa</td>
+    </tr>
+    <tr>
+    <td>dpa-Faktencheck</td>
+    <td>Nigeria</td>
+    <td>English, Hausa, Yoruba, lgbo</td>
+    </tr>
+    <tr>
+    <td>FactCheck Georgia</td>
+    <td>North Macedonia</td>
+    <td>Macedonian, Albanian</td>
+    </tr>
+    <tr>
+    <td>Myth Detector</td>
+    <td>Northern Ireland</td>
+    <td>English</td>
+    </tr>
+    <tr>
+    <td>Oubawa</td>
+    <td>Norway</td>
+    <td>Norwegian</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Oman</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>Ellinika Hoaxes</td>
+    <td>Pacific Islands</td>
+    <td>English</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Palestine</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>Les Observateurs de France 24</td>
+    <td>Pakistan</td>
+    <td>English, Urdu</td>
+    </tr>
+    <tr>
+    <td>Pesa Check</td>
+    <td>Panama</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Paraguay</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Peru</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Philippines</td>
+    <td>English, Tagalog</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Poland</td>
+    <td>Polish</td>
+    </tr>
+    <tr>
+    <td>Boom</td>
+    <td>Portugal</td>
+    <td>Portuguese</td>
+    </tr>
+    <tr>
+    <td>Fact Crescendo</td>
+    <td>Qatar</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>Factly</td>
+    <td>Romania</td>
+    <td>Romanian</td>
+    </tr>
+    <tr>
+    <td>India Today Fact Check</td>
+    <td>Saudi Arabia</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>NewsChecker</td>
+    <td>Senegal</td>
+    <td>French, Wolof</td>
+    </tr>
+    <tr>
+    <td>Newsmoblle Fact Checker</td>
+    <td>Serbia</td>
+    <td>Serbian, Croatian</td>
+    </tr>
+    <tr>
+    <td>The Healthy India Project</td>
+    <td>Singapore</td>
+    <td>English</td>
+    </tr>
+    <tr>
+    <td>The Quint</td>
+    <td>Slovakia</td>
+    <td>Slovakian</td>
+    </tr>
+    <tr>
+    <td>Vlshvas.News</td>
+    <td>Somalia</td>
+    <td>English, French</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>South Africa</td>
+    <td>Afrikaans, Zulu, English, Sotho, Northern Sotho, Southern Ndebele, Setswana</td>
+    </tr>
+    <tr>
+    <td>Kompas.com</td>
+    <td>South Korea</td>
+    <td>Korean, English</td>
+    </tr>
+    <tr>
+    <td>Liputan6</td>
+    <td>Spain</td>
+    <td>Spanish, Catalan</td>
+    </tr>
+    <tr>
+    <td>Mafindo</td>
+    <td>Sri Lanka</td>
+    <td>English, Tamil, Sinhalese</td>
+    </tr>
+    <tr>
+    <td>Tempo</td>
+    <td>Sudan</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>Tirto</td>
+    <td>Sweden</td>
+    <td>Swedish, English</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Switzerland</td>
+    <td>German, Dutch, French</td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td>Syrian Arab Republic</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>Reuters Fact Check</td>
+    <td>Taiwan</td>
+    <td>Chinese</td>
+    </tr>
+    <tr>
+    <td>TheJournal.ie</td>
+    <td>Tanzania</td>
+    <td>English, Swahili, Amharic, French, Oromo</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Thailand</td>
+    <td>Thal</td>
+    </tr>
+    <tr>
+    <td>Reuters Fact Check</td>
+    <td>Tunisia</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>Facta</td>
+    <td>Turkey</td>
+    <td>Turkish, Azeri</td>
+    </tr>
+    <tr>
+    <td>Open</td>
+    <td>United Arab Emirates</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Uganda</td>
+    <td>English, Swahili, French, Oromo</td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td>Ukraine</td>
+    <td>Ukrainian, Russian, English</td>
+    </tr>
+    <tr>
+    <td>Africa Check</td>
+    <td>United Kingdom</td>
+    <td>English</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>United States</td>
+    <td>English, Spanish</td>
+    </tr>
+    <tr>
+    <td>Pesa Check</td>
+    <td>Uruguay</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td>Venezuela</td>
+    <td>Spanish</td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td>Western Sahara</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>Delfi</td>
+    <td>Yemen</td>
+    <td>Arabic</td>
+    </tr>
+    <tr>
+    <td>Re:Baltica</td>
+    <td>Zambia</td>
+    <td>English, French</td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Patikrinta 15mln</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Delfi</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>dpa-Faktencheck</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Pesa Check</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Animal Politico</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Reuters Fact Check</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Raskrinkavanje.me</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>dpa-Faktencheck</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Australian Associated Press</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Pesa Check</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Africa Check</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Oubawa</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Vistinomer</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Faktisk</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Faktisk</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Australian Associated Press</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Soch Fact Check</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Verificador</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Rappler</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Verafiles</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Demagog</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Poligrafo</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Observador</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Africa Check</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>lstinomer</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Reuters Fact Check</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Africa Check</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>JTBC</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Maldito Bulo</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Newtral</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>EFE Verifica</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP Sri Lanka</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Fact Crescendo</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Källkritikbyrån</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>dpa-Faktencheck</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Taiwan FactCheck Center</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Mygopen</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Pesa Check</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Doğruluk Payı</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Teyit</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Pesa Check</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>StopFake</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>VoxCheck</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Full Fact</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>FactCheckNI</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Logically</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Reuters Fact Check</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>The Associated Press</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Check Your Fact</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>The Dispatch</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Factcheck.org</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Lead Stories</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>PolitiFact</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Science Feedback</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Reuters Fact Check</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>USA TODAY</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>Fatabyyano</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    <tr>
+    <td>AFP</td>
+    <td> </td>
+    <td> </td>
+    </tr>
+    </tbody></table>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <h5 class="w3-padding-32">Developed by Charis Papaevangelou</h5>
+</body>
+</html>
